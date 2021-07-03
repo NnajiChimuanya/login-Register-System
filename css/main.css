@@ -1,0 +1,45 @@
+ ol li{
+     text-align: center;
+    list-style: none;
+    display: inline;
+    padding-right: 2em;
+}
+
+ul li {
+    list-style: none;
+}
+
+.container .heading {
+    offset: 4px;
+}
+
+form input {
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 0 0 10px 0;
+    width: 240px;
+    height: 40px;
+    background-color: #f2f2f2;
+}
+
+.container .submit {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+footer {
+    position: absolute;
+    bottom: 0%;
+    width: 100%;
+    background-color: #f2f2f2;
+    text-align: center;
+    
+}
