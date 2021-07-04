@@ -13,11 +13,11 @@
 
 <div class="container">
 <form class="form-group" action="./php/signup.php" method="post">
-    <input type = "text" name = "fullname" placeholder="full Name">
-    <input type = "text" name = "username" placeholder="username e.g mccarthy..">
-    <input type = "email" name = "email" placeholder="email">
-    <input type = "password" name = "password" placeholder="password">
-    <input type = "password" name = "confirmPassword" placeholder="confirm password">
+    <input type = "text" name = "fullname" placeholder="full Name" required>
+    <input type = "text" name = "username" placeholder="username e.g mccarthy.." required>
+    <input type = "email" name = "email" placeholder="email" required>
+    <input type = "password" name = "password" placeholder="password" required>
+    <input type = "password" name = "confirmPassword" placeholder="confirm password" required>
 
     <div class="container submit">
         <button type="submit" name="submit"> Log in</button>
