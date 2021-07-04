@@ -12,7 +12,7 @@
 
 
 <div class="container">
-<form class="form-group">
+<form class="form-group" action="./php/signup.php" method="post">
     <input type = "text" name = "fullname" placeholder="full Name">
     <input type = "text" name = "username" placeholder="username e.g mccarthy..">
     <input type = "email" name = "email" placeholder="email">
