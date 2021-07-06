@@ -12,14 +12,37 @@
             $password = hash("md5", $password);
 
 
+            function checkIfUserExists($conn, $username){
+                $result = $conn->query("SELECT * FROM user WHERE userName = '$username'");
 
-            // if($password !== $confirmpPassword) {
-            //     header("Location : ../index.php?passwordnotthesame");
-            // }
+                if($result->num_rows > 0) {
+                    return true;
+                }
+            }
 
-            $query = "INSERT INTO user (userName, fullName, email, password) VALUES ('$username', '$fullname', '$email', '$password')";
+            function checkIfEmailExists($conn, $email){
+                $result = $conn->query("SELECT * FROM user WHERE email = '$email'");
 
-            if($conn->query($query)) {
+                if($result->num_rows > 0) {
+                    return true;
+                }
+            }
+
+            if(checkIfUserExists($conn, $username)){
+                echo "username already exists";
+                exit();
+            }
+
+            if(checkIfEmailExists($conn, $email)){
+                echo "email already exists";
+                exit();
+            }
+
+            
+
+            $stmt = $conn->prepare("INSERT INTO user (userName, fullName, email, password) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $username, $fullname, $email, $password);
+            if($stmt->execute()) {
                 echo "New account created!";
             } else {
                 echo $conn->error;
