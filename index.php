@@ -24,7 +24,18 @@
         </div>
 
     </form>
+    
+        <span>
+            <?php
+                if(isset($_GET["error"])) {
+                    if($_GET["error"] === "passwordsdontmatch"){
+                        echo " <p>Passwords don't match </p>";
+                    }
+                }
+            ?>  
+        </span>
 
+    
     
 </div>
 

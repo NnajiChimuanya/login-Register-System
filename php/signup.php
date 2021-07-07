@@ -7,13 +7,17 @@
             $username = $_POST["username"];
             $email = $_POST["email"];
             $password = $_POST["password"];
-            $confirmpPassword = $_POST["confirmPassword"];
+            $confirmPassword = $_POST["confirmPassword"];
 
-            $password = hash("md5", $password);
+
+
+            if($password != $confirmPassword) {
+                header("Location: ../index.php?error=passwordsdontmatch");
+            }
 
 
             //importing the functions.php file that contains our function
-            require_once "./functions.php";
+            include_once "./functions.php";
 
             if(checkIfUserExists($conn, $username)){
                 echo "username already exists";
@@ -25,7 +29,11 @@
                 exit();
             }
 
+           
+
             
+
+            $password = hash("md5", $password);
 
             $stmt = $conn->prepare("INSERT INTO user (userName, fullName, email, password) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $username, $fullname, $email, $password);
