@@ -33,7 +33,7 @@
 
             
 
-            $password = hash("md5", $password);
+            $password = hash('md5', $password);
 
             $stmt = $conn->prepare("INSERT INTO user (userName, fullName, email, password) VALUES (?, ?, ?, ?)");
             $stmt->bind_param("ssss", $username, $fullname, $email, $password);

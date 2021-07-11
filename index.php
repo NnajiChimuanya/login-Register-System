@@ -11,7 +11,7 @@
 </div>
 
 
-<div class="container">
+<div class="container form">
     <form class="form-group" action="./php/signup.php" method="post">
         <input type = "text" name = "fullname" placeholder="full Name" required>
         <input type = "text" name = "username" placeholder="username e.g mccarthy.." required>

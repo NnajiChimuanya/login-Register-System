@@ -12,7 +12,7 @@
 
 
 <div class="container">
-    <form class="form-group">
+    <form class="form-group" action='./php/signin.php' method="post">
         <input type = "text" name = "username" placeholder="username">
         <input type = "password" name = "password" placeholder="password">
 
