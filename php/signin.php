@@ -29,11 +29,16 @@ if(isset($_POST["submit"])) {
             
            
             if($password === $hashedPassword){
-                echo "Successfully logged in";
-            } else {
+                session_start();
+                $_SESSION["userid"] = $row["id"];
+                $_SESSION["fullName"] = $row["fullName"];
+                
+                header("Location: ../index.php");
+                exit();
+            } else 
                 echo "invalid password";
             }
-        }
+        
     } else {
         echo "user does not exist";
     }

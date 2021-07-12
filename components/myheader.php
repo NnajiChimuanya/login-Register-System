@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +21,17 @@
         <ol>
             <li> <a href="#"> Home</a> </li>
             <li> <a href="#"> About us</a> </li>
-            <li> <a href="#"> Contact</a> </li>
+
+            <?php
+                if(isset($_SESSION["fullName"])){
+                    echo "<li> <a href='./php/logout.php'> Log Out</a> </li>";
+                } else {
+                    echo "<li> <a href='./signin.php'> Log in</a> </li>";
+                    echo "<li> <a href='./signup.php'> Sign up</a> </li>";
+                }
+            ?>
+
+            
         </ol>
         </nav>
     </header>
