@@ -23,8 +23,6 @@ if(isset($_POST["submit"])) {
         if($row = $result->fetch_assoc()){
             $hashedPassword = $row["password"];
 
-            echo $hashedPassword."<br>";
-            echo $password."<br>";
             $password = hash("md5", $password);
 
 

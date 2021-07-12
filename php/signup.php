@@ -29,10 +29,7 @@
                 exit();
             }
 
-           
-
-            
-
+        
             $password = hash('md5', $password);
 
             $stmt = $conn->prepare("INSERT INTO user (userName, fullName, email, password) VALUES (?, ?, ?, ?)");
