@@ -23,6 +23,10 @@
 
 
     </form>
+
+    <p>
+        <a href="./forgotpassword.php">Forgot password?</a>
+    </p>
 </div>
 
 
